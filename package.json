@@ -1,0 +1,129 @@
+{
+  "name": "dts-service-content",
+  "version": "7.0.0",
+  "description": "API - Content service",
+  "private": true,
+  "main": "./dist/index.js",
+  "scripts": {
+    "start": "node --enable-source-maps .",
+    "clean": "rm -rf ./dist",
+    "dev": "npm run clean && tsc-watch --onSuccess 'npm run dev:post'",
+    "dev:post": "npm run copy && dotenv npm start",
+    "build": "npm run clean && tsc && npm run copy",
+    "copy": "copyfiles -f ./src/schema/*.graphql ./dist/schema",
+    "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts'",
+    "test": "dotenv ava",
+    "specs": "npm run build && dotenv node ./dist/specs.js",
+    "docker": "bash docker.sh",
+    "deploy": "bash -e deploy.sh"
+  },
+  "engines": {
+    "node": "14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/triggerpointmedia/dts-backend.git",
+    "directory": "api/content"
+  },
+  "dependencies": {
+    "@apollo/federation": "0.38.1",
+    "@graphql-tools/schema": "^9.0.13",
+    "@hapi/boom": "^9.1.4",
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/vision": "^6.0.1",
+    "@triggerpointmedia/dts-microservice": "^1.165.0",
+    "@triggerpointmedia/dts-server-client": "^1.413.0",
+    "apollo-server-hapi": "^3.11.1",
+    "aws-sdk": "^2.1296.0",
+    "aws-xray-sdk-core": "^3.4.1",
+    "bluebird": "^3.7.2",
+    "boom": "^7.3.0",
+    "debug": "^4.3.4",
+    "graphql": "^16.6.0",
+    "graphql-compose": "^9.0.10",
+    "graphql-iso-date": "^3.6.1",
+    "graphql-middleware": "^6.1.33",
+    "hapi-swagger": "^12.1.3",
+    "hapi-xray": "^3.0.6",
+    "is-md5": "^0.0.2",
+    "is-promise": "^4.0.0",
+    "later": "^1.2.0",
+    "md5": "^2.3.0",
+    "mime": "^2.6.0",
+    "moment": "^2.29.4",
+    "mongoose": "^6.8.4",
+    "pino": "5.17.0",
+    "sqs-consumer": "^5.8.0",
+    "urijs": "^1.19.11",
+    "uuid": "^3.4.0",
+    "uuid-validate": "^0.0.3"
+  },
+  "devDependencies": {
+    "@apollo/client": "^3.6.9",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@triggerpointmedia/dts-service": "^1.40.0",
+    "@types/aws-sdk": "^2.7.0",
+    "@types/axios": "^0.14.0",
+    "@types/bluebird": "^3.5.36",
+    "@types/boom": "^7.3.2",
+    "@types/chai": "^4.3.3",
+    "@types/graphql": "14.5.0",
+    "@types/hapi__hapi": "^19.0.2",
+    "@types/hapi__inert": "^5.2.3",
+    "@types/hapi__joi": "^16.0.12",
+    "@types/hapi__vision": "^5.5.3",
+    "@types/mime": "^2.0.3",
+    "@types/mocha": "7.0.2",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^12.12.58",
+    "@types/pg": "^8.6.5",
+    "@types/urijs": "^1.19.19",
+    "apollo": "^2.34.0",
+    "ava": "^3.13.0",
+    "axios": "^0.27.2",
+    "copyfiles": "^2.4.1",
+    "cross-fetch": "^3.1.5",
+    "dotenv-cli": "^3.1.0",
+    "mongodb": "^4.9.1",
+    "nyc": "^15.1.0",
+    "pg": "^8.8.0",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^4.2.9",
+    "tslint": "^6.1.3",
+    "tslint-config-airbnb": "^5.11.2",
+    "tslint-plugin-ava": "^0.1.2",
+    "typescript": "^4.8.3"
+  },
+  "ava": {
+    "files": [
+      "dist/**/*.spec.js"
+    ],
+    "timeout": "1m",
+    "verbose": true,
+    "environmentVariables": {
+      "TESTING": "true"
+    }
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "check-coverage": false,
+    "include": [
+      "src/models/**/*",
+      "src/routes/**/*"
+    ],
+    "exclude": [
+      "**/*.fixture.ts",
+      "**/*.spec.js",
+      "**/*.spec.ts"
+    ],
+    "reporter": [
+      "html",
+      "text",
+      "text-summary"
+    ],
+    "report-dir": ".coverage"
+  }
+}

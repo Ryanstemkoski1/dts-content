@@ -1,0 +1,3819 @@
+type Query {
+  listAllergen: [ContentAllergen!]!
+  readAllergen(id: ID!): ContentAllergen!
+  listCampaign: [ContentCampaign!]!
+  readCampaign(id: ID!): ContentCampaign!
+  listChannel: [ContentChannel!]!
+  readChannel(id: ID!): ContentChannel!
+  listMenu: [ContentMenu!]!
+  readMenu(id: ID!): ContentMenu!
+  listDatabase: [ContentDatabase!]!
+  readDatabase(id: ID!): ContentDatabase!
+  listFeed: [ContentFeed!]!
+  readFeed(id: ID!): ContentFeed!
+  listIngredient: [ContentIngredient!]!
+  readIngredient(id: ID!): ContentIngredient!
+  readMedia(id: ID!): ContentMedia!
+  listMedia: [ContentMedia!]!
+  findMedia(page: Int): [ContentMedia!]!
+  listModifier: [ContentModifier!]!
+  readModifier(id: ID!): ContentModifier!
+  listPresentation: [ContentPresentation!]!
+  readPresentation(id: ID!): ContentPresentation!
+  listSeat: [ContentSeat!]!
+  readSeat(id: ID!): ContentSeat!
+  listSurvey: [ContentSurvey!]!
+  readSurvey(id: ID!): ContentSurvey!
+  listTag: [ContentTag!]!
+  readTag(id: ID!): ContentTag!
+  listTemplate: [ContentTemplate!]!
+  readTemplate(id: ID!): ContentTemplate!
+  listTheme: [ContentTheme!]!
+  readTheme(id: ID!): ContentTheme!
+  listWorkflow: [ContentWorkflow!]!
+  readWorkflow(id: ID!): ContentWorkflow!
+}
+
+type Mutation {
+  removeAllergen(id: ID!): ContentVoid
+  createAllergen(
+    """Create request."""
+    body: ContentAllergenWrite!
+  ): ContentAllergen!
+  updateAllergen(
+    id: ID!
+
+    """Update request."""
+    body: ContentAllergenWrite!
+  ): ContentAllergen!
+  removeCampaign(id: ID!): ContentVoid
+  createCampaign(
+    """Create request."""
+    body: ContentCampaignWrite!
+  ): ContentCampaign!
+  updateCampaign(
+    id: ID!
+
+    """Update request."""
+    body: ContentCampaignWrite!
+  ): ContentCampaign!
+  removeChannel(id: ID!): ContentVoid
+  createChannel(
+    """Create request."""
+    body: ContentChannelWrite!
+  ): ContentChannel!
+  updateChannel(
+    id: ID!
+
+    """Update request."""
+    body: ContentChannelWrite!
+  ): ContentChannel!
+  removeMenu(id: ID!): ContentVoid
+  createMenu(
+    """Create request."""
+    body: ContentMenuWrite!
+  ): ContentMenu!
+  updateMenu(
+    id: ID!
+
+    """Update request."""
+    body: ContentMenuWrite!
+  ): ContentMenu!
+  createMenuitem(
+    id: ID!
+
+    """Create request."""
+    body: ContentMenuItemWrite!
+  ): ContentMenuItem!
+  updateMenuitem(
+    id: ID!
+
+    """Update request."""
+    body: ContentMenuItemWrite!
+    item: ID!
+  ): ContentMenuItem!
+  removeMenuitem(id: ID!, item: ID!): ContentVoid
+  createMenucategory(
+    id: ID!
+
+    """Create request."""
+    body: ContentMenuCategoryWrite!
+  ): ContentMenuCategory!
+  updateMenucategory(
+    id: ID!
+
+    """Update request."""
+    body: ContentMenuCategoryWrite!
+    category: ID!
+  ): ContentMenuCategory!
+  removeMenucategory(id: ID!, category: ID!): ContentVoid
+  createMenuupsale(
+    id: ID!
+
+    """Create request."""
+    body: ContentMenuUpsaleWrite!
+  ): ContentMenuUpsale!
+  updateMenuupsale(
+    id: ID!
+
+    """Update request."""
+    body: ContentMenuUpsaleWrite!
+    upsale: ID!
+  ): ContentMenuUpsale!
+  removeMenuupsale(id: ID!, upsale: ID!): ContentVoid
+  removeDatabase(id: ID!): ContentVoid
+  createDatabase(
+    """Create request."""
+    body: ContentDatabaseWrite!
+  ): ContentDatabase!
+  updateDatabase(
+    id: ID!
+
+    """Update request."""
+    body: ContentDatabaseWrite!
+  ): ContentDatabase!
+  removeFeed(id: ID!): ContentVoid
+  createFeed(
+    """Create request."""
+    body: ContentFeedWrite!
+  ): ContentFeed!
+  patchFeed(
+    id: ID!
+
+    """Patch request."""
+    body: ContentFeedPatch!
+  ): ContentVoid
+  createFeedpost(
+    id: ID!
+
+    """Create request."""
+    body: ContentFeedPostWrite!
+  ): ContentFeedPost!
+  removeFeedpost(id: ID!, post: ID!): ContentVoid
+  removeIngredient(id: ID!): ContentVoid
+  createIngredient(
+    """Create request."""
+    body: ContentIngredientWrite!
+  ): ContentIngredient!
+  updateIngredient(
+    id: ID!
+
+    """Update request."""
+    body: ContentIngredientWrite!
+  ): ContentIngredient!
+  removeMedia(id: ID!): ContentVoid
+  createMedia(
+    """Create request."""
+    body: ContentMediaCreate!
+  ): ContentMedia!
+  updateMedia(
+    id: ID!
+
+    """Update request."""
+    body: ContentMediaUpdate!
+  ): ContentMedia!
+  removeModifier(id: ID!): ContentVoid
+  createModifier(
+    """Create request."""
+    body: ContentModifierWrite!
+  ): ContentModifier!
+  updateModifier(
+    id: ID!
+
+    """Update request."""
+    body: ContentModifierWrite!
+  ): ContentModifier!
+  removePresentation(id: ID!): ContentVoid
+  createPresentation(
+    """Create request."""
+    body: ContentPresentationWrite!
+  ): ContentPresentation!
+  updatePresentation(
+    id: ID!
+
+    """Update request."""
+    body: ContentPresentationWrite!
+  ): ContentPresentation!
+  patchPresentation(
+    id: ID!
+
+    """Patch request."""
+    body: ContentPresentationPatch!
+  ): ContentVoid
+  removeSeat(id: ID!): ContentVoid
+  createSeat(
+    """Create request."""
+    body: ContentSeatWrite!
+  ): ContentSeat!
+  updateSeat(
+    id: ID!
+
+    """Update request."""
+    body: ContentSeatWrite!
+  ): ContentSeat!
+  removeSurvey(id: ID!): ContentVoid
+  createSurvey(
+    """Create request."""
+    body: ContentSurveyWrite!
+  ): ContentSurvey!
+  updateSurvey(
+    id: ID!
+
+    """Update request."""
+    body: ContentSurveyWrite!
+  ): ContentSurvey!
+  removeTag(id: ID!): ContentVoid
+  createTag(
+    """Create request."""
+    body: ContentTagWrite!
+  ): ContentTag!
+  updateTag(
+    id: ID!
+
+    """Update request."""
+    body: ContentTagWrite!
+  ): ContentTag!
+  removeTemplate(id: ID!): ContentVoid
+  createTemplate(
+    """Create request."""
+    body: ContentTemplateWrite!
+  ): ContentTemplate!
+  updateTemplate(
+    id: ID!
+
+    """Update request."""
+    body: ContentTemplateWrite!
+  ): ContentTemplate!
+  patchTemplate(
+    id: ID!
+
+    """Patch request."""
+    body: ContentTemplatePatch!
+  ): ContentVoid
+  purchaseTemplate(
+    """Invoke request."""
+    body: ContentPresentationUse!
+    id: ID!
+  ): ContentPresentation!
+  removeTheme(id: ID!): ContentVoid
+  createTheme(
+    """Create request."""
+    body: ContentThemeWrite!
+  ): ContentTheme!
+  updateTheme(
+    id: ID!
+
+    """Update request."""
+    body: ContentThemeWrite!
+  ): ContentTheme!
+  removeWorkflow(id: ID!): ContentVoid
+  createWorkflow(
+    """Create request."""
+    body: ContentWorkflowWrite!
+  ): ContentWorkflow!
+  updateWorkflow(
+    id: ID!
+
+    """Update request."""
+    body: ContentWorkflowWrite!
+  ): ContentWorkflow!
+}
+
+
+
+"""Arbitrary object"""
+scalar ContentObject
+
+"""Represents NULL values"""
+scalar ContentVoid
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+type ContentAllergen {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  title: String!
+  image: ContentFile
+  token: ID!
+}
+
+type ContentCampaign {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  parent: ID
+  title: String!
+  banners: [ContentCampaignBanner!]!
+  schedule: ContentSchedule
+  token: ID!
+}
+
+type ContentCampaignBanner {
+  """Modification date."""
+  modified: DateTime
+  media: ContentFile!
+  destination: ContentDestination
+  url: String
+  slot: String!
+  token: ID!
+}
+
+type ContentChannel {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  title: String!
+  category: String
+  devices: [String!]!
+  presentations: [String!]!
+  token: ID!
+}
+
+type ContentDatabase {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  title: String!
+  columns: [ContentDatabaseColumn!]!
+  rows: [ContentObject]
+  token: ID!
+}
+
+type ContentDatabaseColumn {
+  """Modification date."""
+  modified: DateTime
+  name: String!
+  type: String!
+  token: ID!
+}
+
+type ContentDestination {
+  target: ID
+  page: String
+  url: String
+  token: ID
+}
+
+type ContentEntry {
+  """Entry ID."""
+  token: ID
+
+  """Price."""
+  price: Float
+
+  """Tax amount (0-1)."""
+  tax: Float
+
+  """OMS Stream ID."""
+  stream: String
+
+  """External POS ID."""
+  pos_id: String
+
+  """Entry name."""
+  name: String
+}
+
+type ContentFeed {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+
+  """Feed title."""
+  title: String!
+  source: String!
+  calendar: ContentFeedCalendar
+  facebook: ContentFeedFacebook
+  instagram: ContentFeedInstagram
+  twitter: ContentFeedTwitter
+  url: ContentFeedUrl
+  weather: ContentFeedWeather
+
+  """Approved posts."""
+  posts: [ContentFeedPost!]
+
+  """Blacklist settings."""
+  blacklist: ContentFeedBlacklist
+  token: ID!
+}
+
+type ContentFeedBlacklist {
+  """Automatically filter out profanity."""
+  profanity: Boolean
+
+  """Ignored post IDs."""
+  posts: [String]
+
+  """Removed post IDs."""
+  removed: [String]
+
+  """Ignored user IDs."""
+  users: [String]
+
+  """Ignored words."""
+  words: [String]
+  token: ID
+}
+
+type ContentFeedCalendar {
+  type: String!
+
+  """Google calendar data."""
+  google: ContentFeedCalendarGoogle
+  token: ID
+}
+
+type ContentFeedCalendarGoogle {
+  """Google calendar ID."""
+  id: String!
+
+  """Google calendar name."""
+  name: String!
+
+  """Calendar is writable."""
+  writable: Boolean!
+  token: ID
+}
+
+type ContentFeedFacebook {
+  mode: String!
+  source: String!
+  token: ID
+}
+
+type ContentFeedInstagram {
+  mode: String!
+  source: String!
+  token: ID
+}
+
+type ContentFeedPost {
+  id: String!
+  date: DateTime
+  username: String
+  userid: String
+  text: String
+  userpic: String
+  photo: String
+  token: ID
+}
+
+type ContentFeedTwitter {
+  mode: String!
+  source: String!
+
+  """Hashtag."""
+  hashtag: String
+
+  """Username."""
+  username: String
+  token: ID
+}
+
+type ContentFeedUrl {
+  """Source URL."""
+  link: String!
+  authentication: ContentFeedUrlAuthentication
+  token: ID
+}
+
+type ContentFeedUrlAuthentication {
+  """Authentication header name."""
+  header: String!
+
+  """Authentication header value."""
+  value: String!
+  token: ID
+}
+
+type ContentFeedWeather {
+  source: String!
+
+  """City name (e.g. "Austin, US")."""
+  city: String
+
+  """Latitude."""
+  lat: Float
+
+  """Longitude."""
+  lng: Float
+  token: ID
+}
+
+type ContentFile {
+  """Media ID."""
+  token: ID!
+
+  """Original mime type"""
+  mime: String!
+
+  """Image/video width"""
+  width: Float
+
+  """Image/video height"""
+  height: Float
+
+  """Video duration in seconds (if applicable)"""
+  duration: Float
+
+  """Total number of pages (if applicable)"""
+  pages: Float
+
+  """Is original media version"""
+  original: Boolean
+
+  """Media schedules"""
+  schedules: [ContentSchedule!]
+}
+
+type ContentIngredient {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  title: String!
+  unit: String
+  package: String
+  price: Float
+  quantity: Float
+  token: ID!
+}
+
+type ContentMedia {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+
+  """Parent media element."""
+  parent: String
+
+  """Original mime type."""
+  mime: String
+
+  """Media name."""
+  name: String
+
+  """Processign error code."""
+  error: String
+
+  """Category name."""
+  category: String
+
+  """Original upload file path."""
+  upload: String
+
+  """File uploader User ID."""
+  uploader: String
+
+  """Original file URL."""
+  url: String
+  workers: [ContentMediaWorker!]
+  status: String!
+  meta: ContentMediaMeta
+
+  """File is hidden from the list."""
+  hidden: Boolean
+
+  """List of tags."""
+  tags: [String]
+
+  """Media is published for child locations"""
+  published: Boolean
+
+  """Media schedules"""
+  schedules: [ContentSchedule!]
+  token: ID!
+}
+
+type ContentMediaMeta {
+  """ETag header"""
+  etag: String
+
+  """File size"""
+  size: Float
+
+  """Original width in pixels"""
+  width: Float
+
+  """Original height in pixels"""
+  height: Float
+
+  """Total number of pages"""
+  pages: Float
+
+  """Total duration in seconds"""
+  duration: Float
+
+  """Total number of layers"""
+  layers: Float
+
+  """File has been successfully parsed"""
+  parsed: Boolean
+
+  """Font family"""
+  font_family: String
+
+  """Font weight"""
+  font_weight: Float
+
+  """Audio codec used"""
+  audiocodec: String
+
+  """Video codec used"""
+  videocodec: String
+  token: ID
+}
+
+type ContentMediaWorker {
+  """Modification date."""
+  modified: DateTime
+  status: String
+  started: DateTime
+  ended: DateTime
+  error: String
+  token: ID!
+}
+
+type ContentMenu {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position"""
+  position: Float
+
+  """Parent menu ID"""
+  parent: ID
+  type: String
+
+  """Title"""
+  title: String
+
+  """Subtitle"""
+  subtitle: String
+
+  """Intro audio"""
+  audio: ContentFile
+
+  """Cover image"""
+  image: ContentFile
+
+  """Cover image for mobile"""
+  image_mobile: ContentFile
+
+  """Categories"""
+  categories: [ContentMenuCategory!]
+
+  """Schedule"""
+  schedule: ContentSchedule
+
+  """Upsale items"""
+  upsales: [ContentMenuUpsale!]
+
+  """Items"""
+  items: [ContentMenuItem!]
+  token: ID!
+
+  """Parent menu"""
+  parent_menu: ContentMenu
+}
+
+type ContentMenuCategory {
+  """Modification date."""
+  modified: DateTime
+  parent: ID
+  position: Float
+  title: String!
+  subtitle: String
+  description: String
+  audio: ContentFile
+  image: ContentFile
+  image_mobile: ContentFile
+  token: ID!
+}
+
+type ContentMenuIngredient {
+  """Modification date."""
+  modified: DateTime
+  ingredient: ID!
+  amount: Float!
+  token: ID!
+}
+
+type ContentMenuItem {
+  """Modification date."""
+  modified: DateTime
+  parent: ID
+  position: Float
+  type: String
+  ui: String
+  title: String!
+  description: String
+  ingredients: String
+  image: ContentFile
+  image_mobile: ContentFile
+  photos: [ContentFile!]
+  order: ContentEntry!
+  order_refill: ContentEntry
+  order_main: ContentObject
+  website: String
+  flash: ContentFile
+  pdf: ContentFile
+  ingredients_list: [ContentMenuIngredient!]
+  dmc_device: String
+  schedule: ContentSchedule
+  hide_in_menu: Boolean
+  hide_in_pos: Boolean
+  main_modifier: ID
+  modifiers_overrides: [ContentMenuItemModifierOverride!]
+
+  """Hide menu item"""
+  hidden: Boolean
+
+  """Copy source menu ID"""
+  source_menu: ID
+
+  """Copy source menu item ID"""
+  source_item: ID
+  allergens: [ID]
+  modifiers: [ID]
+  token: ID!
+
+  """Allergens"""
+  allergens_list: ContentAllergen
+
+  """Modifiers"""
+  modifiers_list: ContentModifier
+}
+
+type ContentMenuItemModifierOverride {
+  """Modifier group ID."""
+  modifier: ID!
+
+  """Modifier item ID."""
+  item: ID!
+
+  """Parent (linked) modifier item ID."""
+  parent: ID
+
+  """Override modifier item as selected by default."""
+  is_default: Boolean
+
+  """Override modifier item as hidden."""
+  hidden: Boolean
+
+  """Override linked modifier group IDs."""
+  links: [ID]
+  token: ID
+}
+
+type ContentMenuUpsale {
+  """Modification date."""
+  modified: DateTime
+  title: String!
+
+  """Target menu item ID."""
+  menu_item: ID!
+  criteria: ContentMenuUpsaleCriteria!
+  token: ID!
+}
+
+type ContentMenuUpsaleCriteria {
+  demographics: ContentMenuUpsaleCriteriaDemographics
+  order: ContentMenuUpsaleCriteriaOrder
+  page: ContentMenuUpsaleCriteriaPage
+  schedule: ContentSchedule
+  weather: ContentMenuUpsaleCriteriaWeather
+  token: ID
+}
+
+type ContentMenuUpsaleCriteriaDemographics {
+  sex: String
+  age_min: Float
+  age_max: Float
+  token: ID
+}
+
+type ContentMenuUpsaleCriteriaOrder {
+  menu: ID
+  menu_item: ID
+  token: ID
+}
+
+type ContentMenuUpsaleCriteriaPage {
+  type: String!
+  menu: ID
+  menu_category: ID
+  token: ID
+}
+
+type ContentMenuUpsaleCriteriaWeather {
+  condition: String
+  temperature_min: Float
+  temperature_max: Float
+  token: ID
+}
+
+type ContentModifier {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  title: String!
+  display_title: String
+  audio: ContentFile
+  image: ContentFile
+  required: Boolean
+  limit: Float
+
+  """Hide modifier"""
+  hidden: Boolean
+  items: [ContentModifierItem!]
+
+  """Copy source modifier ID"""
+  source_modifier: ID
+  token: ID!
+}
+
+type ContentModifierItem {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  title: String
+  image: ContentFile
+  order: ContentEntry!
+  is_default: Boolean
+  selection: String
+
+  """Linked modifier group IDs."""
+  links: [ID]
+
+  """Linked modifier group ID (deprecated)."""
+  link: ID
+  labels: [String]
+  ingredients_list: [ID]
+
+  """Hide modifier"""
+  hidden: Boolean
+
+  """Copy source modifier item ID"""
+  source_item: ID
+  token: ID!
+}
+
+type ContentPresentation {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  title: String!
+  schedule: ContentSchedule
+  player_device: String
+  player_devices: [String]
+  canvas: ContentPresentationCanvas!
+  slides: [ContentPresentationSlide!]
+
+  """Preview image ID"""
+  preview: String
+  preview_image: String
+  size: Float
+  template_data: ContentTemplateData
+  screensaver: ID
+  assets: [ContentPresentationAsset!]
+  databases: [ID]
+  bitmaps: [ContentPresentationBitmap!]
+  category: String
+  autoreload: Boolean
+  crossfade: Boolean
+  render: Boolean
+  displays: [ContentPresentationDisplay!]
+  tags: [String]
+  type: String
+  token: ID!
+}
+
+type ContentPresentationAnimation {
+  """Modification date."""
+  modified: DateTime
+  trigger: String
+  effect: String!
+  duration: Float!
+  delay: Float!
+  hidden: Boolean
+  options: ContentObject
+  token: ID!
+}
+
+type ContentPresentationAsset {
+  """Modification date."""
+  modified: DateTime
+  mime: String!
+  meta: ContentPresentationAssetMeta
+  token: ID!
+}
+
+type ContentPresentationAssetMeta {
+  """ETag header"""
+  etag: String
+
+  """File size"""
+  size: Float
+
+  """Original width in pixels"""
+  width: Float
+
+  """Original height in pixels"""
+  height: Float
+
+  """Total number of pages"""
+  pages: Float
+
+  """Total duration in seconds"""
+  duration: Float
+
+  """Total number of layers"""
+  layers: Float
+
+  """File has been successfully parsed"""
+  parsed: Boolean
+
+  """Font family"""
+  font_family: String
+
+  """Font weight"""
+  font_weight: Float
+
+  """Audio codec used"""
+  audiocodec: String
+
+  """Video codec used"""
+  videocodec: String
+  token: ID
+}
+
+type ContentPresentationBinding {
+  """Modification date."""
+  modified: DateTime
+  path: String!
+  feed: String!
+  filter: String
+  type: String!
+  target: String!
+  transform: ContentPresentationBindingTransform
+  token: ID!
+}
+
+type ContentPresentationBindingTransform {
+  type: String!
+  datetime: ContentPresentationBindingTransformDatetime
+  token: ID
+}
+
+type ContentPresentationBindingTransformDatetime {
+  format: String
+  timezone: String
+  token: ID
+}
+
+type ContentPresentationBitmap {
+  """Modification date."""
+  modified: DateTime
+  data: String!
+  token: ID!
+}
+
+type ContentPresentationCalendar {
+  """Calendar ID."""
+  calendar: String
+
+  """Calendar is readonly."""
+  readonly: Boolean!
+  theme: String
+
+  """Background image."""
+  background: ContentFile
+  token: ID
+}
+
+type ContentPresentationCanvas {
+  wizard: String
+  orientation: String
+
+  """Number of displays by horizontal."""
+  width: Float!
+
+  """Number of displays by vertical."""
+  height: Float!
+
+  """Each display resolution by horizontal."""
+  display_width: Float!
+
+  """Each display resolution by vertical."""
+  display_height: Float!
+
+  """Scale the campaign to fullscreen."""
+  fullscreen: Boolean
+
+  """Deprecated. Display ratio."""
+  ratio: Float
+
+  """Each display diagonal in inches."""
+  diagonal: Float
+
+  """Background color in a hexademical format."""
+  background_color: String
+
+  """Canvas guidelines."""
+  grid: [ContentPresentationGuideline!]
+
+  """Canvas properties modification date."""
+  modified: DateTime
+
+  """Recording video resolution by horizontal."""
+  output_width: Float
+
+  """Recording video resolution by vertical."""
+  output_height: Float
+  player_type: String
+  token: ID
+}
+
+type ContentPresentationClock {
+  style: ContentPresentationElementStyle
+  timezone: String
+  type: String!
+  token: ID
+}
+
+type ContentPresentationCombination {
+  """Modification date."""
+  modified: DateTime
+
+  """Display ID"""
+  display: ID
+
+  """Slide elements visibility"""
+  elements: [Boolean]
+
+  """Child combinations"""
+  combinations: [String]
+  token: ID!
+}
+
+type ContentPresentationContainer {
+  medias: [ContentFile!]
+  htmls: [ContentPresentationElementHtml!]
+  animations: [ContentPresentationAnimation!]
+  delay: Float!
+  delays: [ContentObject]
+  manual: Boolean
+  controls: Boolean
+  crossfade: Boolean
+  direction: String
+  count: Float
+  layout: String
+  token: ID
+}
+
+type ContentPresentationCriteria {
+  triggers: [ContentPresentationCriteriaTrigger!]!
+  transition: String!
+  token: ID
+}
+
+type ContentPresentationCriteriaTrigger {
+  source: String!
+  attribute: String!
+  value_text: String
+  value_number_min: Float
+  value_number_max: Float
+  token: ID
+}
+
+type ContentPresentationDisplay {
+  """Modification date."""
+  modified: DateTime
+
+  """Display name."""
+  name: String
+
+  """Display model name."""
+  model: String
+
+  """X position."""
+  x: Float!
+
+  """Y position."""
+  y: Float!
+
+  """Width in pixels."""
+  width: Float!
+
+  """Height in pixels."""
+  height: Float!
+
+  """Recording width in pixels."""
+  video_width: Float
+
+  """Recording height in pixels."""
+  video_height: Float
+
+  """Zoom amount."""
+  scale: Float!
+
+  """Rotation in degrees."""
+  rotate: Float!
+
+  """Diagonal size in inches."""
+  diagonal: Float
+
+  """Side bezels size in inches."""
+  bezel_side: Float
+
+  """Top bezel size in inches."""
+  bezel_top: Float
+
+  """Bottom bezel size in inches."""
+  bezel_bottom: Float
+  token: ID!
+}
+
+type ContentPresentationElement {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  type: String
+  name: String
+  group: String
+  hidden: Boolean
+  schedule: ContentSchedule
+  controls: Boolean
+  crossfade: Boolean
+  bitmap: ContentPresentationElementBitmap
+  media: ContentFile
+  text: String
+  calendar: ContentPresentationCalendar
+  clock: ContentPresentationClock
+  container: ContentPresentationContainer
+  pdf: ContentPresentationElementPdf
+  social: ContentPresentationElementSocial
+  survey: ContentPresentationElementSurvey
+  trivia: ContentPresentationElementTrivia
+  weather: ContentPresentationElementWeather
+  twitter: ContentPresentationElementTwitter
+  stream: ContentPresentationElementStream
+  layout: ContentPresentationElementLayout
+  shape: ContentPresentationElementShape
+  style: ContentPresentationElementStyle
+  web: String
+  web_options: ContentPresentationElementWeb
+  custom_css: String
+  href: ContentPresentationHref
+  html: ContentPresentationElementHtml
+  animations: [ContentPresentationAnimation!]
+  transitions: [ContentPresentationTransition!]
+  bindings: [ContentPresentationBinding!]
+  size: Float
+  rotation: Float
+  lock: Boolean
+  muted: Boolean
+  media_layout: String
+  token: ID!
+}
+
+type ContentPresentationElementBitmap {
+  source: ID!
+  token: ID
+}
+
+type ContentPresentationElementHtml {
+  text: String
+  texts: [String]
+  direction: String
+  delay: Float
+  delays: [Float]
+  bindings: [ContentPresentationBinding!]
+  version: Float
+  marquee: String
+  token: ID
+}
+
+type ContentPresentationElementLayout {
+  left: Float!
+  right: Float!
+  top: Float!
+  bottom: Float!
+  token: ID
+}
+
+type ContentPresentationElementPdf {
+  type: String
+  media: ContentFile
+  token: ID
+}
+
+type ContentPresentationElementShape {
+  type: String
+  token: ID
+}
+
+type ContentPresentationElementSocial {
+  animations: [ContentPresentationAnimation!]
+  feed: [String]
+  mode: String
+  header: ContentPresentationElementStyle
+  body: ContentPresentationElementStyle
+  delay: Float
+  token: ID
+}
+
+type ContentPresentationElementStream {
+  type: String
+  url: String
+  token: ID
+}
+
+type ContentPresentationElementStyle {
+  background_color: String
+  border_color: String
+  border_radius: Float
+  border_width: Float
+  stroke_style: String
+  stroke_width: Float
+  stroke_color: String
+  color: String
+  font_family: String
+  font_size: Float
+  font_weight: String
+  font_style: String
+  text_align: String
+  opacity: Float
+  padding: Float
+  white_space: String
+  token: ID
+}
+
+type ContentPresentationElementSurvey {
+  token: ID!
+}
+
+type ContentPresentationElementTrivia {
+  game_location: String!
+  token: ID
+}
+
+type ContentPresentationElementTwitter {
+  username: String!
+  token: ID
+}
+
+type ContentPresentationElementWeather {
+  feed: String!
+  type: String
+  icons: String
+  token: ID
+}
+
+type ContentPresentationElementWeb {
+  implementation: String
+  token: ID
+}
+
+type ContentPresentationGuideline {
+  type: String!
+
+  """X position."""
+  x: Float!
+
+  """Y position."""
+  y: Float!
+  token: ID
+}
+
+type ContentPresentationHref {
+  slide: ID!
+  params: ContentObject
+  token: ID
+}
+
+type ContentPresentationSlide {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  schedule: ContentSchedule
+  delay: Float
+  loop: Boolean
+  rewind: Boolean
+  hidden: Boolean
+  name: String
+  elements: [ContentPresentationElement!]
+  animations: [ContentPresentationAnimation!]
+  combinations: [ContentPresentationCombination!]
+  tags: [String]
+
+  """Device tags"""
+  device_tags: [String]
+  source_presentation: ID
+  source_slide: ID
+  criteria: ContentPresentationCriteria
+  media: ContentFile
+  token: ID!
+}
+
+type ContentPresentationTransition {
+  """Modification date."""
+  modified: DateTime
+  duration: Float!
+  delay: Float!
+  token: ID!
+}
+
+type ContentSchedule {
+  start_time: String
+  start: String
+  end: String
+  end_time: String
+  from: String
+  to: String
+  days: [Float]
+  lock: String
+  token: ID
+}
+
+type ContentSeat {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  name: String!
+  pos_id: String
+  token: ID!
+}
+
+type ContentSurvey {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  title: String!
+  questions: [ContentSurveyQuestion!]
+  emails: [String]
+  token: ID!
+}
+
+type ContentSurveyQuestion {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  type: String!
+  title: String!
+  text: String
+  required: Boolean
+  min: Float
+  max: Float
+  required_values: [Float]
+  step: Float
+  values: [String]
+  token: ID!
+}
+
+type ContentTag {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+
+  """Name"""
+  name: String!
+  token: ID!
+}
+
+type ContentTemplate {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+
+  """Title"""
+  title: String!
+
+  """Category name"""
+  category: String
+
+  """Campaign canvas"""
+  canvas: ContentPresentationCanvas!
+
+  """Campaign slides"""
+  slides: [ContentTemplateSlide!]!
+
+  """Preview image ID"""
+  preview: String
+  preview_image: String
+
+  """Campaign content size"""
+  size: Float
+
+  """Template data"""
+  template_data: ContentTemplateData!
+
+  """Indicates if the campaign will be pre-recorded"""
+  render: Boolean
+
+  """Related media files to include with this campaign"""
+  assets: [ContentPresentationAsset!]
+
+  """Bitmap elements data"""
+  bitmaps: [ContentPresentationBitmap!]
+
+  """Related databases to include with this campaign"""
+  databases: [ID]
+
+  """List of tags"""
+  tags: [String]
+
+  """Template price"""
+  price: Float
+
+  """Template is published"""
+  published: Boolean
+  token: ID!
+}
+
+type ContentTemplateData {
+  """Modification date."""
+  modified: DateTime
+
+  """Template values"""
+  sources: [ContentTemplateDataSource!]
+  token: ID!
+}
+
+type ContentTemplateDataItem {
+  """Modification date."""
+  modified: DateTime
+
+  """Field description"""
+  description: String
+  type: String
+
+  """Template-defined text"""
+  default_text: String
+
+  """Template-defined color"""
+  default_color: String
+
+  """Template-defined media"""
+  default_media: ContentFile
+
+  """User-defined text"""
+  value_text: String
+
+  """User-defined color"""
+  value_color: String
+
+  """User-defined media"""
+  value_media: ContentFile
+
+  """Theme overrides"""
+  themes: [ContentTemplateDataItemTheme!]
+
+  """Hide related presentation elements"""
+  hidden: Boolean
+
+  """Suggested media files"""
+  hints_media: [ContentFile!]
+
+  """Group name"""
+  group: String
+
+  """Sort position"""
+  position: Float
+  token: ID!
+}
+
+type ContentTemplateDataItemTheme {
+  """Theme ID"""
+  theme: ID!
+
+  """Theme-defined text"""
+  default_text: String
+
+  """Theme-defined color"""
+  default_color: String
+
+  """Theme-defined media"""
+  default_media: ContentFile
+
+  """Suggested media files"""
+  hints_media: [ContentFile!]
+  token: ID
+}
+
+type ContentTemplateDataSource {
+  """Modification date."""
+  modified: DateTime
+
+  """Related presentation slide ID"""
+  slide: ID!
+
+  """Selected theme ID"""
+  current_theme: ID
+
+  """Color themes"""
+  themes: [ContentTemplateDataTheme!]
+
+  """Template fields"""
+  items: [ContentTemplateDataItem!]!
+  token: ID!
+}
+
+type ContentTemplateDataTheme {
+  """Modification date."""
+  modified: DateTime
+
+  """Theme name"""
+  title: String
+
+  """Theme color"""
+  color: String!
+
+  """Sort position"""
+  position: Float
+  token: ID!
+}
+
+type ContentTemplateSlide {
+  """Modification date."""
+  modified: DateTime
+  delay: Float
+  loop: Boolean
+  rewind: Boolean
+  hidden: Boolean
+  name: String
+  elements: [ContentPresentationElement!]
+  animations: [ContentPresentationAnimation!]
+  token: ID!
+}
+
+type ContentTheme {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+  parent: ID
+  title: String!
+  type: String
+  backgrounds: [ContentThemeBackground!]
+  screensavers: [ContentThemeBackground!]
+  elements: ContentThemeElements
+  options: ContentThemeOptions
+  token: ID!
+
+  """Parent theme"""
+  parent_theme: ContentTheme
+}
+
+type ContentThemeBackground {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  media: ContentFile
+  media_portrait: ContentFile
+  token: ID!
+}
+
+type ContentThemeElement {
+  """Modification date."""
+  modified: DateTime
+  media: ContentFile
+  title: String
+  text: String
+  token: ID!
+}
+
+type ContentThemeElements {
+  button_home: ContentThemeElement
+  button_back: ContentThemeElement
+  button_cart: ContentThemeElement
+  button_rotate: ContentThemeElement
+  button_waiter: ContentThemeElement
+  button_check: ContentThemeElement
+  button_survey: ContentThemeElement
+  button_chat: ContentThemeElement
+  location_logo: ContentThemeElement
+  location_map: ContentThemeElement
+  button_settings: ContentThemeElement
+  welcome_tile: ContentThemeElement
+  receipt_logo: ContentThemeElement
+  startup_audio: ContentThemeElement
+  freosk_head_banner: ContentThemeElement
+  freosk_button_back: ContentThemeElement
+  freosk_button_more: ContentThemeElement
+  freosk_button_reset: ContentThemeElement
+  freosk_button_order: ContentThemeElement
+  freosk_button_nextitem: ContentThemeElement
+  freosk_button_additem: ContentThemeElement
+  freosk_button_addmore: ContentThemeElement
+  oms_alert_audio: ContentThemeElement
+  token: ID
+}
+
+type ContentThemeOptions {
+  tiles_style: String
+  hide_prices: Boolean
+  screensaver_timeout: Float
+  background_interval: Float
+  screensaver_interval: Float
+  color: String
+  background_color: String
+  secondary_color: String
+  text_color: String
+  lock_on_order: Boolean
+  hardened_unlock: Boolean
+  font_family: String
+  freosk_order_text: String
+  token: ID
+}
+
+type ContentWorkflow {
+  """Creation date."""
+  created: DateTime!
+
+  """Modification date."""
+  modified: DateTime!
+
+  """Location ID."""
+  location: String!
+
+  """Sort position."""
+  position: Float
+
+  """Name"""
+  name: String!
+
+  """Device IDs"""
+  devices: [String]
+  questionnaire: ContentWorkflowQuestionnaire
+  hid: ContentWorkflowHid
+  recognition: ContentWorkflowRecognition
+  mask: ContentWorkflowMask
+  temperature: ContentWorkflowTemperature
+  print: ContentWorkflowPrint
+  door: ContentWorkflowDoor
+  token: ID!
+}
+
+type ContentWorkflowDoor {
+  enabled: Boolean!
+
+  """Door open duration (seconds)."""
+  duration: Float
+  token: ID
+}
+
+type ContentWorkflowHid {
+  enabled: Boolean!
+  mode: String
+
+  """Display the employee's name."""
+  display_name: Boolean
+  token: ID
+}
+
+type ContentWorkflowMask {
+  enabled: Boolean!
+  mode: String
+
+  """Send an alarm when no mask detected."""
+  alarm_no_mask: Boolean
+  token: ID
+}
+
+type ContentWorkflowPrint {
+  enabled: Boolean!
+  token: ID
+}
+
+type ContentWorkflowQuestionnaire {
+  enabled: Boolean!
+
+  """SignJet form (survey) ID to display."""
+  survey: String
+  mode: String
+  token: ID
+}
+
+type ContentWorkflowRecognition {
+  enabled: Boolean!
+
+  """Send an alarm when the visitor is not recognized."""
+  alarm_stranger: Boolean
+  token: ID
+}
+
+type ContentWorkflowTemperature {
+  enabled: Boolean!
+
+  """Display the temperature value."""
+  display_result: Boolean
+
+  """Speak the temperature value."""
+  speak_result: Boolean
+
+  """Miminum value that is considered to be not too cold."""
+  low_threshold: Float
+
+  """Miminum value that is considered to be a fever."""
+  high_threshold: Float
+
+  """Send an alarm when the temperature is too high."""
+  alarm_too_high: Boolean
+  token: ID
+}
+
+input ContentAllergenWrite {
+  """Sort position."""
+  position: Float
+  title: String!
+  image: ContentFileWrite
+}
+
+input ContentCampaignBannerWrite {
+  """Modification date."""
+  modified: DateTime
+  media: ContentFileWrite!
+  destination: ContentDestinationWrite
+  url: String
+  slot: String!
+  token: ID
+}
+
+input ContentCampaignWrite {
+  """Sort position."""
+  position: Float
+  parent: ID
+  title: String!
+  banners: [ContentCampaignBannerWrite!]!
+  schedule: ContentScheduleWrite
+}
+
+input ContentChannelWrite {
+  """Sort position."""
+  position: Float
+  title: String!
+  category: String
+  devices: [String!]!
+  presentations: [String!]!
+}
+
+input ContentDatabaseColumnWrite {
+  """Modification date."""
+  modified: DateTime
+  name: String!
+  type: String!
+  token: ID
+}
+
+input ContentDatabaseWrite {
+  """Sort position."""
+  position: Float
+  title: String!
+  columns: [ContentDatabaseColumnWrite!]!
+  rows: [ContentObject]
+}
+
+input ContentDestinationWrite {
+  target: ID
+  page: String
+  url: String
+}
+
+input ContentEntryWrite {
+  """Entry ID."""
+  token: ID
+
+  """Price."""
+  price: Float
+
+  """Tax amount (0-1)."""
+  tax: Float
+
+  """OMS Stream ID."""
+  stream: String
+
+  """External POS ID."""
+  pos_id: String
+
+  """Entry name."""
+  name: String
+}
+
+input ContentFeedBlacklistPatch {
+  """Automatically filter out profanity."""
+  profanity: Boolean
+
+  """Ignored post IDs."""
+  posts: [String]
+
+  """Removed post IDs."""
+  removed: [String]
+
+  """Ignored user IDs."""
+  users: [String]
+
+  """Ignored words."""
+  words: [String]
+}
+
+input ContentFeedBlacklistWrite {
+  """Automatically filter out profanity."""
+  profanity: Boolean
+
+  """Ignored post IDs."""
+  posts: [String]
+
+  """Removed post IDs."""
+  removed: [String]
+
+  """Ignored user IDs."""
+  users: [String]
+
+  """Ignored words."""
+  words: [String]
+}
+
+input ContentFeedCalendarGoogleWrite {
+  """Google calendar ID."""
+  id: String!
+
+  """Google calendar name."""
+  name: String!
+
+  """Calendar is writable."""
+  writable: Boolean!
+}
+
+input ContentFeedCalendarWrite {
+  type: String!
+
+  """Google calendar data."""
+  google: ContentFeedCalendarGoogleWrite
+}
+
+input ContentFeedFacebookWrite {
+  mode: String!
+  source: String!
+}
+
+input ContentFeedInstagramWrite {
+  mode: String!
+  source: String!
+}
+
+input ContentFeedPatch {
+  title: String
+  blacklist: ContentFeedBlacklistPatch
+}
+
+input ContentFeedPostWrite {
+  id: String!
+  date: DateTime
+  username: String
+  userid: String
+  text: String
+  userpic: String
+  photo: String
+}
+
+input ContentFeedTwitterWrite {
+  mode: String!
+  source: String!
+
+  """Hashtag."""
+  hashtag: String
+
+  """Username."""
+  username: String
+}
+
+input ContentFeedUrlAuthenticationWrite {
+  """Authentication header name."""
+  header: String!
+
+  """Authentication header value."""
+  value: String!
+}
+
+input ContentFeedUrlWrite {
+  """Source URL."""
+  link: String!
+  authentication: ContentFeedUrlAuthenticationWrite
+}
+
+input ContentFeedWeatherWrite {
+  source: String!
+
+  """City name (e.g. "Austin, US")."""
+  city: String
+
+  """Latitude."""
+  lat: Float
+
+  """Longitude."""
+  lng: Float
+}
+
+input ContentFeedWrite {
+  """Sort position."""
+  position: Float
+
+  """Feed title."""
+  title: String!
+  source: String!
+  calendar: ContentFeedCalendarWrite
+  facebook: ContentFeedFacebookWrite
+  instagram: ContentFeedInstagramWrite
+  twitter: ContentFeedTwitterWrite
+  url: ContentFeedUrlWrite
+  weather: ContentFeedWeatherWrite
+
+  """Approved posts."""
+  posts: [ContentFeedPostWrite!]
+
+  """Blacklist settings."""
+  blacklist: ContentFeedBlacklistWrite
+}
+
+input ContentFilePatch {
+  """Media ID."""
+  token: ID
+
+  """Original mime type"""
+  mime: String
+
+  """Image/video width"""
+  width: Float
+
+  """Image/video height"""
+  height: Float
+
+  """Video duration in seconds (if applicable)"""
+  duration: Float
+
+  """Total number of pages (if applicable)"""
+  pages: Float
+
+  """Is original media version"""
+  original: Boolean
+
+  """Media schedules"""
+  schedules: [ContentSchedulePatch!]
+}
+
+input ContentFileWrite {
+  """Media ID."""
+  token: ID!
+
+  """Original mime type"""
+  mime: String!
+
+  """Image/video width"""
+  width: Float
+
+  """Image/video height"""
+  height: Float
+
+  """Video duration in seconds (if applicable)"""
+  duration: Float
+
+  """Total number of pages (if applicable)"""
+  pages: Float
+
+  """Is original media version"""
+  original: Boolean
+
+  """Media schedules"""
+  schedules: [ContentScheduleWrite!]
+}
+
+input ContentIngredientWrite {
+  """Sort position."""
+  position: Float
+  title: String!
+  unit: String
+  package: String
+  price: Float
+  quantity: Float
+}
+
+input ContentMediaCreate {
+  """Pre-assigned ID (S2S only)."""
+  token: ID
+
+  """Parent media element."""
+  parent: String
+
+  """Original mime type."""
+  mime: String
+
+  """Location ID."""
+  location: String
+
+  """Uploaded temporary file path."""
+  upload: String
+
+  """Remote URL to download."""
+  url: String
+
+  """Media name."""
+  name: String
+
+  """Category name."""
+  category: String
+
+  """File is hidden from the list."""
+  hidden: Boolean
+
+  """Media is published for child locations"""
+  published: Boolean
+
+  """List of tags."""
+  tags: [String]
+  meta: ContentMediaMetaEditableWrite
+
+  """Media schedules"""
+  schedules: [ContentScheduleWrite!]
+}
+
+input ContentMediaMetaEditableWrite {
+  """Font family"""
+  font_family: String
+
+  """Font weight"""
+  font_weight: Float
+}
+
+input ContentMediaUpdate {
+  """Media name."""
+  name: String
+
+  """Category name."""
+  category: String
+
+  """File is hidden from the list."""
+  hidden: Boolean
+
+  """Media is published for child locations"""
+  published: Boolean
+
+  """List of tags."""
+  tags: [String]
+  meta: ContentMediaMetaEditableWrite
+
+  """Media schedules"""
+  schedules: [ContentScheduleWrite!]
+}
+
+input ContentMenuCategoryWrite {
+  """Modification date."""
+  modified: DateTime
+  parent: ID
+  position: Float
+  title: String!
+  subtitle: String
+  description: String
+  audio: ContentFileWrite
+  image: ContentFileWrite
+  image_mobile: ContentFileWrite
+  token: ID
+}
+
+input ContentMenuIngredientWrite {
+  """Modification date."""
+  modified: DateTime
+  ingredient: ID!
+  amount: Float!
+  token: ID
+}
+
+input ContentMenuItemModifierOverrideWrite {
+  """Modifier group ID."""
+  modifier: ID!
+
+  """Modifier item ID."""
+  item: ID!
+
+  """Parent (linked) modifier item ID."""
+  parent: ID
+
+  """Override modifier item as selected by default."""
+  is_default: Boolean
+
+  """Override modifier item as hidden."""
+  hidden: Boolean
+
+  """Override linked modifier group IDs."""
+  links: [ID]
+}
+
+input ContentMenuItemWrite {
+  """Modification date."""
+  modified: DateTime
+  parent: ID
+  position: Float
+  type: String
+  ui: String
+  title: String!
+  description: String
+  ingredients: String
+  image: ContentFileWrite
+  image_mobile: ContentFileWrite
+  photos: [ContentFileWrite!]
+  order: ContentEntryWrite!
+  order_refill: ContentEntryWrite
+  order_main: ContentObject
+  website: String
+  flash: ContentFileWrite
+  pdf: ContentFileWrite
+  ingredients_list: [ContentMenuIngredientWrite!]
+  dmc_device: String
+  schedule: ContentScheduleWrite
+  hide_in_menu: Boolean
+  hide_in_pos: Boolean
+  main_modifier: ID
+  modifiers_overrides: [ContentMenuItemModifierOverrideWrite!]
+
+  """Hide menu item"""
+  hidden: Boolean
+
+  """Copy source menu ID"""
+  source_menu: ID
+
+  """Copy source menu item ID"""
+  source_item: ID
+  allergens: [ID]
+  modifiers: [ID]
+  token: ID
+}
+
+input ContentMenuUpsaleCriteriaDemographicsWrite {
+  sex: String
+  age_min: Float
+  age_max: Float
+}
+
+input ContentMenuUpsaleCriteriaOrderWrite {
+  menu: ID
+  menu_item: ID
+}
+
+input ContentMenuUpsaleCriteriaPageWrite {
+  type: String!
+  menu: ID
+  menu_category: ID
+}
+
+input ContentMenuUpsaleCriteriaWeatherWrite {
+  condition: String
+  temperature_min: Float
+  temperature_max: Float
+}
+
+input ContentMenuUpsaleCriteriaWrite {
+  demographics: ContentMenuUpsaleCriteriaDemographicsWrite
+  order: ContentMenuUpsaleCriteriaOrderWrite
+  page: ContentMenuUpsaleCriteriaPageWrite
+  schedule: ContentScheduleWrite
+  weather: ContentMenuUpsaleCriteriaWeatherWrite
+}
+
+input ContentMenuUpsaleWrite {
+  """Modification date."""
+  modified: DateTime
+  title: String!
+
+  """Target menu item ID."""
+  menu_item: ID!
+  criteria: ContentMenuUpsaleCriteriaWrite!
+  token: ID
+}
+
+input ContentMenuWrite {
+  """Sort position"""
+  position: Float
+
+  """Parent menu ID"""
+  parent: ID
+  type: String
+
+  """Title"""
+  title: String
+
+  """Subtitle"""
+  subtitle: String
+
+  """Intro audio"""
+  audio: ContentFileWrite
+
+  """Cover image"""
+  image: ContentFileWrite
+
+  """Cover image for mobile"""
+  image_mobile: ContentFileWrite
+
+  """Categories"""
+  categories: [ContentMenuCategoryWrite!]
+
+  """Schedule"""
+  schedule: ContentScheduleWrite
+
+  """Upsale items"""
+  upsales: [ContentMenuUpsaleWrite!]
+
+  """Items"""
+  items: [ContentMenuItemWrite!]
+}
+
+input ContentModifierItemWrite {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  title: String
+  image: ContentFileWrite
+  order: ContentEntryWrite!
+  is_default: Boolean
+  selection: String
+
+  """Linked modifier group IDs."""
+  links: [ID]
+
+  """Linked modifier group ID (deprecated)."""
+  link: ID
+  labels: [String]
+  ingredients_list: [ID]
+
+  """Hide modifier"""
+  hidden: Boolean
+
+  """Copy source modifier item ID"""
+  source_item: ID
+  token: ID
+}
+
+input ContentModifierWrite {
+  """Sort position."""
+  position: Float
+  title: String!
+  display_title: String
+  audio: ContentFileWrite
+  image: ContentFileWrite
+  required: Boolean
+  limit: Float
+
+  """Hide modifier"""
+  hidden: Boolean
+  items: [ContentModifierItemWrite!]
+
+  """Copy source modifier ID"""
+  source_modifier: ID
+}
+
+input ContentPresentationAnimationPatch {
+  """Modification date."""
+  modified: DateTime
+  trigger: String
+  effect: String
+  duration: Float
+  delay: Float
+  hidden: Boolean
+  options: ContentObject
+  token: ID
+}
+
+input ContentPresentationAnimationWrite {
+  """Modification date."""
+  modified: DateTime
+  trigger: String
+  effect: String!
+  duration: Float!
+  delay: Float!
+  hidden: Boolean
+  options: ContentObject
+  token: ID
+}
+
+input ContentPresentationAssetMetaPatch {
+  """ETag header"""
+  etag: String
+
+  """File size"""
+  size: Float
+
+  """Original width in pixels"""
+  width: Float
+
+  """Original height in pixels"""
+  height: Float
+
+  """Total number of pages"""
+  pages: Float
+
+  """Total duration in seconds"""
+  duration: Float
+
+  """Total number of layers"""
+  layers: Float
+
+  """File has been successfully parsed"""
+  parsed: Boolean
+
+  """Font family"""
+  font_family: String
+
+  """Font weight"""
+  font_weight: Float
+
+  """Audio codec used"""
+  audiocodec: String
+
+  """Video codec used"""
+  videocodec: String
+}
+
+input ContentPresentationAssetMetaWrite {
+  """ETag header"""
+  etag: String
+
+  """File size"""
+  size: Float
+
+  """Original width in pixels"""
+  width: Float
+
+  """Original height in pixels"""
+  height: Float
+
+  """Total number of pages"""
+  pages: Float
+
+  """Total duration in seconds"""
+  duration: Float
+
+  """Total number of layers"""
+  layers: Float
+
+  """File has been successfully parsed"""
+  parsed: Boolean
+
+  """Font family"""
+  font_family: String
+
+  """Font weight"""
+  font_weight: Float
+
+  """Audio codec used"""
+  audiocodec: String
+
+  """Video codec used"""
+  videocodec: String
+}
+
+input ContentPresentationAssetPatch {
+  """Modification date."""
+  modified: DateTime
+  mime: String
+  meta: ContentPresentationAssetMetaPatch
+  token: ID
+}
+
+input ContentPresentationAssetWrite {
+  """Modification date."""
+  modified: DateTime
+  mime: String!
+  meta: ContentPresentationAssetMetaWrite
+  token: ID
+}
+
+input ContentPresentationBindingPatch {
+  """Modification date."""
+  modified: DateTime
+  path: String
+  feed: String
+  filter: String
+  type: String
+  target: String
+  transform: ContentPresentationBindingTransformPatch
+  token: ID
+}
+
+input ContentPresentationBindingTransformDatetimePatch {
+  format: String
+  timezone: String
+}
+
+input ContentPresentationBindingTransformDatetimeWrite {
+  format: String
+  timezone: String
+}
+
+input ContentPresentationBindingTransformPatch {
+  type: String
+  datetime: ContentPresentationBindingTransformDatetimePatch
+}
+
+input ContentPresentationBindingTransformWrite {
+  type: String!
+  datetime: ContentPresentationBindingTransformDatetimeWrite
+}
+
+input ContentPresentationBindingWrite {
+  """Modification date."""
+  modified: DateTime
+  path: String!
+  feed: String!
+  filter: String
+  type: String!
+  target: String!
+  transform: ContentPresentationBindingTransformWrite
+  token: ID
+}
+
+input ContentPresentationBitmapPatch {
+  """Modification date."""
+  modified: DateTime
+  data: String
+  token: ID
+}
+
+input ContentPresentationBitmapWrite {
+  """Modification date."""
+  modified: DateTime
+  data: String!
+  token: ID
+}
+
+input ContentPresentationCalendarPatch {
+  """Calendar ID."""
+  calendar: String
+
+  """Calendar is readonly."""
+  readonly: Boolean
+  theme: String
+
+  """Background image."""
+  background: ContentFilePatch
+}
+
+input ContentPresentationCalendarWrite {
+  """Calendar ID."""
+  calendar: String
+
+  """Calendar is readonly."""
+  readonly: Boolean!
+  theme: String
+
+  """Background image."""
+  background: ContentFileWrite
+}
+
+input ContentPresentationCanvasPatch {
+  wizard: String
+  orientation: String
+
+  """Number of displays by horizontal."""
+  width: Float
+
+  """Number of displays by vertical."""
+  height: Float
+
+  """Each display resolution by horizontal."""
+  display_width: Float
+
+  """Each display resolution by vertical."""
+  display_height: Float
+
+  """Scale the campaign to fullscreen."""
+  fullscreen: Boolean
+
+  """Deprecated. Display ratio."""
+  ratio: Float
+
+  """Each display diagonal in inches."""
+  diagonal: Float
+
+  """Background color in a hexademical format."""
+  background_color: String
+
+  """Canvas guidelines."""
+  grid: [ContentPresentationGuidelinePatch!]
+
+  """Canvas properties modification date."""
+  modified: DateTime
+
+  """Recording video resolution by horizontal."""
+  output_width: Float
+
+  """Recording video resolution by vertical."""
+  output_height: Float
+  player_type: String
+}
+
+input ContentPresentationCanvasWrite {
+  wizard: String
+  orientation: String
+
+  """Number of displays by horizontal."""
+  width: Float!
+
+  """Number of displays by vertical."""
+  height: Float!
+
+  """Each display resolution by horizontal."""
+  display_width: Float!
+
+  """Each display resolution by vertical."""
+  display_height: Float!
+
+  """Scale the campaign to fullscreen."""
+  fullscreen: Boolean
+
+  """Deprecated. Display ratio."""
+  ratio: Float
+
+  """Each display diagonal in inches."""
+  diagonal: Float
+
+  """Background color in a hexademical format."""
+  background_color: String
+
+  """Canvas guidelines."""
+  grid: [ContentPresentationGuidelineWrite!]
+
+  """Canvas properties modification date."""
+  modified: DateTime
+
+  """Recording video resolution by horizontal."""
+  output_width: Float
+
+  """Recording video resolution by vertical."""
+  output_height: Float
+  player_type: String
+}
+
+input ContentPresentationClockPatch {
+  style: ContentPresentationElementStylePatch
+  timezone: String
+  type: String
+}
+
+input ContentPresentationClockWrite {
+  style: ContentPresentationElementStyleWrite
+  timezone: String
+  type: String!
+}
+
+input ContentPresentationCombinationPatch {
+  """Modification date."""
+  modified: DateTime
+
+  """Display ID"""
+  display: ID
+
+  """Slide elements visibility"""
+  elements: [Boolean]
+
+  """Child combinations"""
+  combinations: [String]
+  token: ID
+}
+
+input ContentPresentationCombinationWrite {
+  """Modification date."""
+  modified: DateTime
+
+  """Display ID"""
+  display: ID
+
+  """Slide elements visibility"""
+  elements: [Boolean]
+
+  """Child combinations"""
+  combinations: [String]
+  token: ID
+}
+
+input ContentPresentationContainerPatch {
+  medias: [ContentFilePatch!]
+  htmls: [ContentPresentationElementHtmlPatch!]
+  animations: [ContentPresentationAnimationPatch!]
+  delay: Float
+  delays: [ContentObject]
+  manual: Boolean
+  controls: Boolean
+  crossfade: Boolean
+  direction: String
+  count: Float
+  layout: String
+}
+
+input ContentPresentationContainerWrite {
+  medias: [ContentFileWrite!]
+  htmls: [ContentPresentationElementHtmlWrite!]
+  animations: [ContentPresentationAnimationWrite!]
+  delay: Float!
+  delays: [ContentObject]
+  manual: Boolean
+  controls: Boolean
+  crossfade: Boolean
+  direction: String
+  count: Float
+  layout: String
+}
+
+input ContentPresentationCriteriaPatch {
+  triggers: [ContentPresentationCriteriaTriggerPatch!]
+  transition: String
+}
+
+input ContentPresentationCriteriaTriggerPatch {
+  source: String
+  attribute: String
+  value_text: String
+  value_number_min: Float
+  value_number_max: Float
+}
+
+input ContentPresentationCriteriaTriggerWrite {
+  source: String!
+  attribute: String!
+  value_text: String
+  value_number_min: Float
+  value_number_max: Float
+}
+
+input ContentPresentationCriteriaWrite {
+  triggers: [ContentPresentationCriteriaTriggerWrite!]!
+  transition: String!
+}
+
+input ContentPresentationDisplayPatch {
+  """Modification date."""
+  modified: DateTime
+
+  """Display name."""
+  name: String
+
+  """Display model name."""
+  model: String
+
+  """X position."""
+  x: Float
+
+  """Y position."""
+  y: Float
+
+  """Width in pixels."""
+  width: Float
+
+  """Height in pixels."""
+  height: Float
+
+  """Recording width in pixels."""
+  video_width: Float
+
+  """Recording height in pixels."""
+  video_height: Float
+
+  """Zoom amount."""
+  scale: Float
+
+  """Rotation in degrees."""
+  rotate: Float
+
+  """Diagonal size in inches."""
+  diagonal: Float
+
+  """Side bezels size in inches."""
+  bezel_side: Float
+
+  """Top bezel size in inches."""
+  bezel_top: Float
+
+  """Bottom bezel size in inches."""
+  bezel_bottom: Float
+  token: ID
+}
+
+input ContentPresentationDisplayWrite {
+  """Modification date."""
+  modified: DateTime
+
+  """Display name."""
+  name: String
+
+  """Display model name."""
+  model: String
+
+  """X position."""
+  x: Float!
+
+  """Y position."""
+  y: Float!
+
+  """Width in pixels."""
+  width: Float!
+
+  """Height in pixels."""
+  height: Float!
+
+  """Recording width in pixels."""
+  video_width: Float
+
+  """Recording height in pixels."""
+  video_height: Float
+
+  """Zoom amount."""
+  scale: Float!
+
+  """Rotation in degrees."""
+  rotate: Float!
+
+  """Diagonal size in inches."""
+  diagonal: Float
+
+  """Side bezels size in inches."""
+  bezel_side: Float
+
+  """Top bezel size in inches."""
+  bezel_top: Float
+
+  """Bottom bezel size in inches."""
+  bezel_bottom: Float
+  token: ID
+}
+
+input ContentPresentationElementBitmapPatch {
+  source: ID
+}
+
+input ContentPresentationElementBitmapWrite {
+  source: ID!
+}
+
+input ContentPresentationElementHtmlPatch {
+  text: String
+  texts: [String]
+  direction: String
+  delay: Float
+  delays: [Float]
+  bindings: [ContentPresentationBindingPatch!]
+  version: Float
+  marquee: String
+}
+
+input ContentPresentationElementHtmlWrite {
+  text: String
+  texts: [String]
+  direction: String
+  delay: Float
+  delays: [Float]
+  bindings: [ContentPresentationBindingWrite!]
+  version: Float
+  marquee: String
+}
+
+input ContentPresentationElementLayoutPatch {
+  left: Float
+  right: Float
+  top: Float
+  bottom: Float
+}
+
+input ContentPresentationElementLayoutWrite {
+  left: Float!
+  right: Float!
+  top: Float!
+  bottom: Float!
+}
+
+input ContentPresentationElementPatch {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  type: String
+  name: String
+  group: String
+  hidden: Boolean
+  schedule: ContentSchedulePatch
+  controls: Boolean
+  crossfade: Boolean
+  bitmap: ContentPresentationElementBitmapPatch
+  media: ContentFilePatch
+  text: String
+  calendar: ContentPresentationCalendarPatch
+  clock: ContentPresentationClockPatch
+  container: ContentPresentationContainerPatch
+  pdf: ContentPresentationElementPdfPatch
+  social: ContentPresentationElementSocialPatch
+  survey: ContentPresentationElementSurveyPatch
+  trivia: ContentPresentationElementTriviaPatch
+  weather: ContentPresentationElementWeatherPatch
+  twitter: ContentPresentationElementTwitterPatch
+  stream: ContentPresentationElementStreamPatch
+  layout: ContentPresentationElementLayoutPatch
+  shape: ContentPresentationElementShapePatch
+  style: ContentPresentationElementStylePatch
+  web: String
+  web_options: ContentPresentationElementWebPatch
+  custom_css: String
+  href: ContentPresentationHrefPatch
+  html: ContentPresentationElementHtmlPatch
+  animations: [ContentPresentationAnimationPatch!]
+  transitions: [ContentPresentationTransitionPatch!]
+  bindings: [ContentPresentationBindingPatch!]
+  size: Float
+  rotation: Float
+  lock: Boolean
+  muted: Boolean
+  media_layout: String
+  token: ID
+}
+
+input ContentPresentationElementPdfPatch {
+  type: String
+  media: ContentFilePatch
+}
+
+input ContentPresentationElementPdfWrite {
+  type: String
+  media: ContentFileWrite
+}
+
+input ContentPresentationElementShapePatch {
+  type: String
+}
+
+input ContentPresentationElementShapeWrite {
+  type: String
+}
+
+input ContentPresentationElementSocialPatch {
+  animations: [ContentPresentationAnimationPatch!]
+  feed: [String]
+  mode: String
+  header: ContentPresentationElementStylePatch
+  body: ContentPresentationElementStylePatch
+  delay: Float
+}
+
+input ContentPresentationElementSocialWrite {
+  animations: [ContentPresentationAnimationWrite!]
+  feed: [String]
+  mode: String
+  header: ContentPresentationElementStyleWrite
+  body: ContentPresentationElementStyleWrite
+  delay: Float
+}
+
+input ContentPresentationElementStreamPatch {
+  type: String
+  url: String
+}
+
+input ContentPresentationElementStreamWrite {
+  type: String
+  url: String
+}
+
+input ContentPresentationElementStylePatch {
+  background_color: String
+  border_color: String
+  border_radius: Float
+  border_width: Float
+  stroke_style: String
+  stroke_width: Float
+  stroke_color: String
+  color: String
+  font_family: String
+  font_size: Float
+  font_weight: String
+  font_style: String
+  text_align: String
+  opacity: Float
+  padding: Float
+  white_space: String
+}
+
+input ContentPresentationElementStyleWrite {
+  background_color: String
+  border_color: String
+  border_radius: Float
+  border_width: Float
+  stroke_style: String
+  stroke_width: Float
+  stroke_color: String
+  color: String
+  font_family: String
+  font_size: Float
+  font_weight: String
+  font_style: String
+  text_align: String
+  opacity: Float
+  padding: Float
+  white_space: String
+}
+
+input ContentPresentationElementSurveyPatch {
+  token: ID
+}
+
+input ContentPresentationElementSurveyWrite {
+  token: ID!
+}
+
+input ContentPresentationElementTriviaPatch {
+  game_location: String
+}
+
+input ContentPresentationElementTriviaWrite {
+  game_location: String!
+}
+
+input ContentPresentationElementTwitterPatch {
+  username: String
+}
+
+input ContentPresentationElementTwitterWrite {
+  username: String!
+}
+
+input ContentPresentationElementWeatherPatch {
+  feed: String
+  type: String
+  icons: String
+}
+
+input ContentPresentationElementWeatherWrite {
+  feed: String!
+  type: String
+  icons: String
+}
+
+input ContentPresentationElementWebPatch {
+  implementation: String
+}
+
+input ContentPresentationElementWebWrite {
+  implementation: String
+}
+
+input ContentPresentationElementWrite {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  type: String
+  name: String
+  group: String
+  hidden: Boolean
+  schedule: ContentScheduleWrite
+  controls: Boolean
+  crossfade: Boolean
+  bitmap: ContentPresentationElementBitmapWrite
+  media: ContentFileWrite
+  text: String
+  calendar: ContentPresentationCalendarWrite
+  clock: ContentPresentationClockWrite
+  container: ContentPresentationContainerWrite
+  pdf: ContentPresentationElementPdfWrite
+  social: ContentPresentationElementSocialWrite
+  survey: ContentPresentationElementSurveyWrite
+  trivia: ContentPresentationElementTriviaWrite
+  weather: ContentPresentationElementWeatherWrite
+  twitter: ContentPresentationElementTwitterWrite
+  stream: ContentPresentationElementStreamWrite
+  layout: ContentPresentationElementLayoutWrite
+  shape: ContentPresentationElementShapeWrite
+  style: ContentPresentationElementStyleWrite
+  web: String
+  web_options: ContentPresentationElementWebWrite
+  custom_css: String
+  href: ContentPresentationHrefWrite
+  html: ContentPresentationElementHtmlWrite
+  animations: [ContentPresentationAnimationWrite!]
+  transitions: [ContentPresentationTransitionWrite!]
+  bindings: [ContentPresentationBindingWrite!]
+  size: Float
+  rotation: Float
+  lock: Boolean
+  muted: Boolean
+  media_layout: String
+  token: ID
+}
+
+input ContentPresentationGuidelinePatch {
+  type: String
+
+  """X position."""
+  x: Float
+
+  """Y position."""
+  y: Float
+}
+
+input ContentPresentationGuidelineWrite {
+  type: String!
+
+  """X position."""
+  x: Float!
+
+  """Y position."""
+  y: Float!
+}
+
+input ContentPresentationHrefPatch {
+  slide: ID
+  params: ContentObject
+}
+
+input ContentPresentationHrefWrite {
+  slide: ID!
+  params: ContentObject
+}
+
+input ContentPresentationPatch {
+  """Sort position."""
+  position: Float
+  title: String
+  schedule: ContentSchedulePatch
+  player_device: String
+  player_devices: [String]
+  canvas: ContentPresentationCanvasPatch
+  slides: [ContentPresentationSlidePatch!]
+
+  """Preview image ID"""
+  preview: String
+  preview_image: String
+  size: Float
+  template_data: ContentTemplateDataPatch
+  screensaver: ID
+  assets: [ContentPresentationAssetPatch!]
+  databases: [ID]
+  bitmaps: [ContentPresentationBitmapPatch!]
+  category: String
+  autoreload: Boolean
+  crossfade: Boolean
+  render: Boolean
+  displays: [ContentPresentationDisplayPatch!]
+  tags: [String]
+  type: String
+}
+
+input ContentPresentationSlidePatch {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  schedule: ContentSchedulePatch
+  delay: Float
+  loop: Boolean
+  rewind: Boolean
+  hidden: Boolean
+  name: String
+  elements: [ContentPresentationElementPatch!]
+  animations: [ContentPresentationAnimationPatch!]
+  combinations: [ContentPresentationCombinationPatch!]
+  tags: [String]
+
+  """Device tags"""
+  device_tags: [String]
+  source_presentation: ID
+  source_slide: ID
+  criteria: ContentPresentationCriteriaPatch
+  media: ContentFilePatch
+  token: ID
+}
+
+input ContentPresentationSlideWrite {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  schedule: ContentScheduleWrite
+  delay: Float
+  loop: Boolean
+  rewind: Boolean
+  hidden: Boolean
+  name: String
+  elements: [ContentPresentationElementWrite!]
+  animations: [ContentPresentationAnimationWrite!]
+  combinations: [ContentPresentationCombinationWrite!]
+  tags: [String]
+
+  """Device tags"""
+  device_tags: [String]
+  source_presentation: ID
+  source_slide: ID
+  criteria: ContentPresentationCriteriaWrite
+  media: ContentFileWrite
+  token: ID
+}
+
+input ContentPresentationTransitionPatch {
+  """Modification date."""
+  modified: DateTime
+  duration: Float
+  delay: Float
+  token: ID
+}
+
+input ContentPresentationTransitionWrite {
+  """Modification date."""
+  modified: DateTime
+  duration: Float!
+  delay: Float!
+  token: ID
+}
+
+input ContentPresentationUse {
+  slide: ID
+}
+
+input ContentPresentationWrite {
+  """Sort position."""
+  position: Float
+  title: String!
+  schedule: ContentScheduleWrite
+  player_device: String
+  player_devices: [String]
+  canvas: ContentPresentationCanvasWrite!
+  slides: [ContentPresentationSlideWrite!]
+
+  """Preview image ID"""
+  preview: String
+  preview_image: String
+  size: Float
+  template_data: ContentTemplateDataWrite
+  screensaver: ID
+  assets: [ContentPresentationAssetWrite!]
+  databases: [ID]
+  bitmaps: [ContentPresentationBitmapWrite!]
+  category: String
+  autoreload: Boolean
+  crossfade: Boolean
+  render: Boolean
+  displays: [ContentPresentationDisplayWrite!]
+  tags: [String]
+  type: String
+}
+
+input ContentSchedulePatch {
+  start_time: String
+  start: String
+  end: String
+  end_time: String
+  from: String
+  to: String
+  days: [Float]
+  lock: String
+}
+
+input ContentScheduleWrite {
+  start_time: String
+  start: String
+  end: String
+  end_time: String
+  from: String
+  to: String
+  days: [Float]
+  lock: String
+}
+
+input ContentSeatWrite {
+  """Sort position."""
+  position: Float
+  name: String!
+  pos_id: String
+}
+
+input ContentSurveyQuestionWrite {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  type: String!
+  title: String!
+  text: String
+  required: Boolean
+  min: Float
+  max: Float
+  required_values: [Float]
+  step: Float
+  values: [String]
+  token: ID
+}
+
+input ContentSurveyWrite {
+  """Sort position."""
+  position: Float
+  title: String!
+  questions: [ContentSurveyQuestionWrite!]
+  emails: [String]
+}
+
+input ContentTagWrite {
+  """Sort position."""
+  position: Float
+
+  """Name"""
+  name: String!
+}
+
+input ContentTemplateDataItemPatch {
+  """Modification date."""
+  modified: DateTime
+
+  """Field description"""
+  description: String
+  type: String
+
+  """Template-defined text"""
+  default_text: String
+
+  """Template-defined color"""
+  default_color: String
+
+  """Template-defined media"""
+  default_media: ContentFilePatch
+
+  """User-defined text"""
+  value_text: String
+
+  """User-defined color"""
+  value_color: String
+
+  """User-defined media"""
+  value_media: ContentFilePatch
+
+  """Theme overrides"""
+  themes: [ContentTemplateDataItemThemePatch!]
+
+  """Hide related presentation elements"""
+  hidden: Boolean
+
+  """Suggested media files"""
+  hints_media: [ContentFilePatch!]
+
+  """Group name"""
+  group: String
+
+  """Sort position"""
+  position: Float
+  token: ID
+}
+
+input ContentTemplateDataItemThemePatch {
+  """Theme ID"""
+  theme: ID
+
+  """Theme-defined text"""
+  default_text: String
+
+  """Theme-defined color"""
+  default_color: String
+
+  """Theme-defined media"""
+  default_media: ContentFilePatch
+
+  """Suggested media files"""
+  hints_media: [ContentFilePatch!]
+}
+
+input ContentTemplateDataItemThemeWrite {
+  """Theme ID"""
+  theme: ID!
+
+  """Theme-defined text"""
+  default_text: String
+
+  """Theme-defined color"""
+  default_color: String
+
+  """Theme-defined media"""
+  default_media: ContentFileWrite
+
+  """Suggested media files"""
+  hints_media: [ContentFileWrite!]
+}
+
+input ContentTemplateDataItemWrite {
+  """Modification date."""
+  modified: DateTime
+
+  """Field description"""
+  description: String
+  type: String
+
+  """Template-defined text"""
+  default_text: String
+
+  """Template-defined color"""
+  default_color: String
+
+  """Template-defined media"""
+  default_media: ContentFileWrite
+
+  """User-defined text"""
+  value_text: String
+
+  """User-defined color"""
+  value_color: String
+
+  """User-defined media"""
+  value_media: ContentFileWrite
+
+  """Theme overrides"""
+  themes: [ContentTemplateDataItemThemeWrite!]
+
+  """Hide related presentation elements"""
+  hidden: Boolean
+
+  """Suggested media files"""
+  hints_media: [ContentFileWrite!]
+
+  """Group name"""
+  group: String
+
+  """Sort position"""
+  position: Float
+  token: ID
+}
+
+input ContentTemplateDataPatch {
+  """Modification date."""
+  modified: DateTime
+
+  """Template values"""
+  sources: [ContentTemplateDataSourcePatch!]
+  token: ID
+}
+
+input ContentTemplateDataSourcePatch {
+  """Modification date."""
+  modified: DateTime
+
+  """Related presentation slide ID"""
+  slide: ID
+
+  """Selected theme ID"""
+  current_theme: ID
+
+  """Color themes"""
+  themes: [ContentTemplateDataThemePatch!]
+
+  """Template fields"""
+  items: [ContentTemplateDataItemPatch!]
+  token: ID
+}
+
+input ContentTemplateDataSourceWrite {
+  """Modification date."""
+  modified: DateTime
+
+  """Related presentation slide ID"""
+  slide: ID!
+
+  """Selected theme ID"""
+  current_theme: ID
+
+  """Color themes"""
+  themes: [ContentTemplateDataThemeWrite!]
+
+  """Template fields"""
+  items: [ContentTemplateDataItemWrite!]!
+  token: ID
+}
+
+input ContentTemplateDataThemePatch {
+  """Modification date."""
+  modified: DateTime
+
+  """Theme name"""
+  title: String
+
+  """Theme color"""
+  color: String
+
+  """Sort position"""
+  position: Float
+  token: ID
+}
+
+input ContentTemplateDataThemeWrite {
+  """Modification date."""
+  modified: DateTime
+
+  """Theme name"""
+  title: String
+
+  """Theme color"""
+  color: String!
+
+  """Sort position"""
+  position: Float
+  token: ID
+}
+
+input ContentTemplateDataWrite {
+  """Modification date."""
+  modified: DateTime
+
+  """Template values"""
+  sources: [ContentTemplateDataSourceWrite!]
+  token: ID
+}
+
+input ContentTemplatePatch {
+  """Sort position."""
+  position: Float
+
+  """Title"""
+  title: String
+
+  """Category name"""
+  category: String
+
+  """Campaign canvas"""
+  canvas: ContentPresentationCanvasPatch
+
+  """Campaign slides"""
+  slides: [ContentTemplateSlidePatch!]
+
+  """Preview image ID"""
+  preview: String
+  preview_image: String
+
+  """Campaign content size"""
+  size: Float
+
+  """Template data"""
+  template_data: ContentTemplateDataPatch
+
+  """Indicates if the campaign will be pre-recorded"""
+  render: Boolean
+
+  """Related media files to include with this campaign"""
+  assets: [ContentPresentationAssetPatch!]
+
+  """Bitmap elements data"""
+  bitmaps: [ContentPresentationBitmapPatch!]
+
+  """Related databases to include with this campaign"""
+  databases: [ID]
+
+  """List of tags"""
+  tags: [String]
+
+  """Template price"""
+  price: Float
+
+  """Template is published"""
+  published: Boolean
+}
+
+input ContentTemplateSlidePatch {
+  """Modification date."""
+  modified: DateTime
+  delay: Float
+  loop: Boolean
+  rewind: Boolean
+  hidden: Boolean
+  name: String
+  elements: [ContentPresentationElementPatch!]
+  animations: [ContentPresentationAnimationPatch!]
+  token: ID
+}
+
+input ContentTemplateSlideWrite {
+  """Modification date."""
+  modified: DateTime
+  delay: Float
+  loop: Boolean
+  rewind: Boolean
+  hidden: Boolean
+  name: String
+  elements: [ContentPresentationElementWrite!]
+  animations: [ContentPresentationAnimationWrite!]
+  token: ID
+}
+
+input ContentTemplateWrite {
+  """Sort position."""
+  position: Float
+
+  """Title"""
+  title: String!
+
+  """Category name"""
+  category: String
+
+  """Campaign canvas"""
+  canvas: ContentPresentationCanvasWrite!
+
+  """Campaign slides"""
+  slides: [ContentTemplateSlideWrite!]!
+
+  """Preview image ID"""
+  preview: String
+  preview_image: String
+
+  """Campaign content size"""
+  size: Float
+
+  """Template data"""
+  template_data: ContentTemplateDataWrite!
+
+  """Indicates if the campaign will be pre-recorded"""
+  render: Boolean
+
+  """Related media files to include with this campaign"""
+  assets: [ContentPresentationAssetWrite!]
+
+  """Bitmap elements data"""
+  bitmaps: [ContentPresentationBitmapWrite!]
+
+  """Related databases to include with this campaign"""
+  databases: [ID]
+
+  """List of tags"""
+  tags: [String]
+
+  """Template price"""
+  price: Float
+
+  """Template is published"""
+  published: Boolean
+}
+
+input ContentThemeBackgroundWrite {
+  """Modification date."""
+  modified: DateTime
+  position: Float
+  media: ContentFileWrite
+  media_portrait: ContentFileWrite
+  token: ID
+}
+
+input ContentThemeElementsWrite {
+  button_home: ContentThemeElementWrite
+  button_back: ContentThemeElementWrite
+  button_cart: ContentThemeElementWrite
+  button_rotate: ContentThemeElementWrite
+  button_waiter: ContentThemeElementWrite
+  button_check: ContentThemeElementWrite
+  button_survey: ContentThemeElementWrite
+  button_chat: ContentThemeElementWrite
+  location_logo: ContentThemeElementWrite
+  location_map: ContentThemeElementWrite
+  button_settings: ContentThemeElementWrite
+  welcome_tile: ContentThemeElementWrite
+  receipt_logo: ContentThemeElementWrite
+  startup_audio: ContentThemeElementWrite
+  freosk_head_banner: ContentThemeElementWrite
+  freosk_button_back: ContentThemeElementWrite
+  freosk_button_more: ContentThemeElementWrite
+  freosk_button_reset: ContentThemeElementWrite
+  freosk_button_order: ContentThemeElementWrite
+  freosk_button_nextitem: ContentThemeElementWrite
+  freosk_button_additem: ContentThemeElementWrite
+  freosk_button_addmore: ContentThemeElementWrite
+  oms_alert_audio: ContentThemeElementWrite
+}
+
+input ContentThemeElementWrite {
+  """Modification date."""
+  modified: DateTime
+  media: ContentFileWrite
+  title: String
+  text: String
+  token: ID
+}
+
+input ContentThemeOptionsWrite {
+  tiles_style: String
+  hide_prices: Boolean
+  screensaver_timeout: Float
+  background_interval: Float
+  screensaver_interval: Float
+  color: String
+  background_color: String
+  secondary_color: String
+  text_color: String
+  lock_on_order: Boolean
+  hardened_unlock: Boolean
+  font_family: String
+  freosk_order_text: String
+}
+
+input ContentThemeWrite {
+  """Sort position."""
+  position: Float
+  parent: ID
+  title: String!
+  type: String
+  backgrounds: [ContentThemeBackgroundWrite!]
+  screensavers: [ContentThemeBackgroundWrite!]
+  elements: ContentThemeElementsWrite
+  options: ContentThemeOptionsWrite
+}
+
+input ContentWorkflowDoorWrite {
+  enabled: Boolean!
+
+  """Door open duration (seconds)."""
+  duration: Float
+}
+
+input ContentWorkflowHidWrite {
+  enabled: Boolean!
+  mode: String
+
+  """Display the employee's name."""
+  display_name: Boolean
+}
+
+input ContentWorkflowMaskWrite {
+  enabled: Boolean!
+  mode: String
+
+  """Send an alarm when no mask detected."""
+  alarm_no_mask: Boolean
+}
+
+input ContentWorkflowPrintWrite {
+  enabled: Boolean!
+}
+
+input ContentWorkflowQuestionnaireWrite {
+  enabled: Boolean!
+
+  """SignJet form (survey) ID to display."""
+  survey: String
+  mode: String
+}
+
+input ContentWorkflowRecognitionWrite {
+  enabled: Boolean!
+
+  """Send an alarm when the visitor is not recognized."""
+  alarm_stranger: Boolean
+}
+
+input ContentWorkflowTemperatureWrite {
+  enabled: Boolean!
+
+  """Display the temperature value."""
+  display_result: Boolean
+
+  """Speak the temperature value."""
+  speak_result: Boolean
+
+  """Miminum value that is considered to be not too cold."""
+  low_threshold: Float
+
+  """Miminum value that is considered to be a fever."""
+  high_threshold: Float
+
+  """Send an alarm when the temperature is too high."""
+  alarm_too_high: Boolean
+}
+
+input ContentWorkflowWrite {
+  """Sort position."""
+  position: Float
+
+  """Name"""
+  name: String!
+
+  """Device IDs"""
+  devices: [String]
+  questionnaire: ContentWorkflowQuestionnaireWrite
+  hid: ContentWorkflowHidWrite
+  recognition: ContentWorkflowRecognitionWrite
+  mask: ContentWorkflowMaskWrite
+  temperature: ContentWorkflowTemperatureWrite
+  print: ContentWorkflowPrintWrite
+  door: ContentWorkflowDoorWrite
+}
+extend type ContentTemplate {
+  purchased: Boolean!
+}

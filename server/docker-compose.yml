@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+    nginx:
+        image: nginx
+        restart: always
+        depends_on:
+            - dts-service-content
+        ports:
+            - "80:80"
+            - "8080:8080"
+        volumes:
+            - /var/app/current/proxy/conf.d:/etc/nginx/conf.d
+            - /var/app/current/proxy/nginx.conf:/etc/nginx/nginx.conf
+        logging:
+            options:
+                max-size: "100M"
+
+    dts-service-content:
+        image: <ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/<NAME>:<TAG>
+        restart: always
+        environment:
+            - PORT=3000
+            - NODE_ENV=${NODE_ENV}
+            - VERSION=${VERSION}
+            - AWS_NODEJS_CONNECTION_REUSE_ENABLED=1
+        logging:
+            driver: "awslogs"
+            options:
+                awslogs-region: "<REGION>"
+                awslogs-group: "/api/<NAME>"
+                awslogs-datetime-format: ""

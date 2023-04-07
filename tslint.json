@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-plugin-ava"
+  ],
+  "rules": {
+    "align": false,
+    "import-name": false,
+    "quotemark": false,
+    "object-literal-key-quotes": false,
+    "no-increment-decrement": false,
+    "space-in-parens": false
+  }
+}

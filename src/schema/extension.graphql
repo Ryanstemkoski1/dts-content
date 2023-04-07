@@ -1,0 +1,3 @@
+extend type ContentTemplate {
+  purchased: Boolean!
+}

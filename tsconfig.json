@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "sourceMap": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": false,
+    "allowSyntheticDefaultImports": true,
+    "lib": ["ES2020", "DOM"]
+  },
+  "include": [
+    "./src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

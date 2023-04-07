@@ -1,0 +1,23 @@
+version: 0.2
+
+env:
+  variables:
+    MONGODB: "mongodb://127.0.0.1:27017/test"
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - cd $CODEBUILD_SRC_DIR/api/content
+      - docker login --username $DOCKER_USER --password $DOCKER_TOKEN
+      - docker run -d -p 27017:27017 --name mongodb mongo
+      - ADBLOCK=true NODE_ENV= npm i --prefer-offline --no-audit
+  build:
+    commands:
+      - cd $CODEBUILD_SRC_DIR/api/content
+      - npm run lint && npm run build && npm run test
+
+cache:
+  paths:
+    - $CODEBUILD_SRC_DIR/api/content/node_modules/**/*
