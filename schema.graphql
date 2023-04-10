@@ -641,7 +641,22 @@ type ContentMedia {
 
   """Media schedules"""
   schedules: [ContentSchedule!]
+
+  """Media Comments"""
+  comments: [ContentMediaComments!]
   token: ID!
+}
+
+type ContentMediaComments {
+  """Media Comments"""
+  body: String
+
+  """Mentioned Users"""
+  mentions: [String]
+
+  """User"""
+  user: String
+  token: ID
 }
 
 type ContentMediaMeta {
@@ -2119,6 +2134,12 @@ input ContentIngredientWrite {
   quantity: Float
 }
 
+input ContentMediaCommentEdiableWrite {
+  body: String
+  mentions: [String]
+  user: String
+}
+
 input ContentMediaCreate {
   """Pre-assigned ID (S2S only)."""
   token: ID
@@ -2156,6 +2177,7 @@ input ContentMediaCreate {
 
   """Media schedules"""
   schedules: [ContentScheduleWrite!]
+  comments: [ContentMediaCommentEdiableWrite!]
 }
 
 input ContentMediaMetaEditableWrite {
@@ -2185,6 +2207,7 @@ input ContentMediaUpdate {
 
   """Media schedules"""
   schedules: [ContentScheduleWrite!]
+  comments: [ContentMediaCommentEdiableWrite!]
 }
 
 input ContentMenuCategoryWrite {

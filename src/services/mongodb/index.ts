@@ -41,6 +41,8 @@ export class MongoClient {
 
     this.connection = mongoose.createConnection(connectionString, {
       dbName: 'snap',
+      ssl: true,
+      sslValidate:false
     });
 
     this.connection.on('connecting', () => {

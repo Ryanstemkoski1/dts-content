@@ -70,7 +70,7 @@ export const schema = generateDocumentSchema<IMedia>(EEntityType.Media, {
   tags:           { type: [String], trim: true, description: 'List of tags.'  },
   published:      { type: Boolean, description: 'Media is published for child locations' },
   schedules:      { type: [Schedule], description: 'Media schedules' },
-  comments:       { type: [Comment] }
+  comments:       { type: [Comment], description: 'Media Comments' }
 }, {
   id: 'uuid',
   minimal: [
@@ -107,7 +107,7 @@ export interface IMediaCreate extends Document {
   published?:boolean;
   tags?:string[];
   meta?:IMediaMetaWrite;
-  comments?:IMediaCommentdata;
+  comments?:IMediaCommentwrite;
 }
 
 export interface IMediaWrite extends Document {
@@ -120,12 +120,18 @@ export interface IMediaWrite extends Document {
   status?:EMediaStatus;
   error?:string;
   mime?:string;
-  comments?:IMediaCommentdata;
+  comments?:IMediaCommentwrite;
 }
 
 export interface IMediaMetaWrite extends Document {
   'font-family'?:string;
   'font-weight'?:number;
+}
+
+export interface IMediaCommentwrite extends Document {
+  body: String
+  user: String
+  mentions: [String]
 }
 
 export const writeMetaSchema = generateObjectSchema('MediaMetaEditable', {
@@ -137,7 +143,6 @@ export const writeCommentSchema = generateObjectSchema('MediaCommentEdiable', {
   body:           { type: String},
   mentions:           { type: [String]},
   user:          { type: String},
-  createdAt:         { type: Number, default: Date.now }
 })
 
 export const createSchema = generateObjectSchema<IMediaCreate>('MediaCreate', {

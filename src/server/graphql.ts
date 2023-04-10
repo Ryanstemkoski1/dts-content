@@ -71,6 +71,7 @@ export class GraphQLServer {
 
     await this.server.applyMiddleware({
       app: this.hapi,
+      path:'/graphql'
       // route: config.is_debug ? {
       //   auth: false,
       // } : undefined,
